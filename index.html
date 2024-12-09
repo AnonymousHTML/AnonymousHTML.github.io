@@ -2,11 +2,15 @@
 
 <script>
   document.documentElement.innerHTML=atob(document.URL.substring((document.URL.split("//")[0].length+2+document.domain.length+2)));
+  if (document.URL.substring((document.URL.split("//")[0].length+2+document.domain.length+2)) === "") {
+    window.location.replace("https://anonymoushtml.github.io/#PGgxPldlbGNvbWUgdG8gQW5vbnltb3VzSFRNTCE8L2gxPjxwPk9uIHRoaXMgcGFnZSB5b3UgY2FuIGNyZWF0ZSBhIHNtYWxsIHBhZ2UgKHdpdGggbWluaW1hbCBKYXZhU2NyaXB0IHN1cHBvcnQpIGFub255bW91c2x5LiBUbyBjcmVhdGUgYSBwYWdlLCBzaW1wbHkgZW5jcnlwdCBIVE1MIGludG8gQmFzZTY0IGFuZCBwdXQgdGhlIEJhc2U2NCB0ZXh0IGFmdGVyOjxicj5odHRwczovL2Fub255bW91c2h0bWwuZ2l0aHViLmlvLyM8L3A+")
+  }
   for (let i = 0; i < document.scripts.length; i++) { // make scripts have atleast some functionality
     if (document.scripts[i].src === "") {
       eval(document.scripts[i].innerText);
     } else {
-      document.documentElement.innerHTML = document.scripts[i].src;
+      console.log("Sorry, external JavaScript is not currently supported.")
+      console.log(document.scripts[i])
     }
   }
 </script>
