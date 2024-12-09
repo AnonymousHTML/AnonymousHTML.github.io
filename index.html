@@ -7,9 +7,10 @@
       eval(document.scripts[i].innerText);
     } else {
       var scriptinsertionanonymoushtml = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = document.scripts[i].src;
-      document.head.appendChild(script);
+      scriptinsertionanonymoushtml.type = 'text/javascript';
+      scriptinsertionanonymoushtml.src = document.scripts[i].src;
+      document.head.appendChild(scriptinsertionanonymoushtml)
+      delete scriptinsertionanonymoushtml;
     }
   }
 </script>
