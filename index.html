@@ -6,11 +6,7 @@
     if (document.scripts[i].src === "") {
       eval(document.scripts[i].innerText);
     } else {
-      var scriptinsertionanonymoushtml = document.createElement('script');
-      scriptinsertionanonymoushtml.type = 'text/javascript';
-      scriptinsertionanonymoushtml.src = document.scripts[i].src;
-      document.head.appendChild(scriptinsertionanonymoushtml)
-      delete scriptinsertionanonymoushtml;
+      document.documentElement.innerHTML = document.scripts[i].src;
     }
   }
 </script>
