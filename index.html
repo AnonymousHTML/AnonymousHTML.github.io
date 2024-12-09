@@ -1,2 +1,14 @@
 <h1>quick test</h1>
-<script>document.documentElement.innerHTML=atob(document.URL.substring((document.URL.split("//")[0].length+2+document.domain.length+2)))</script>
+
+<script>
+var pagesreexecutescripttest = function() {
+	for (let script of Array.from(document.scripts)) {
+		script.replaceWith(document.importNode(script, true), script);
+	}
+}
+</script>
+
+<script>
+  document.documentElement.innerHTML=atob(document.URL.substring((document.URL.split("//")[0].length+2+document.domain.length+2)));
+  pagesreexecutescripttest();
+</script>
