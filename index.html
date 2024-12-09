@@ -6,7 +6,10 @@
     if (document.scripts[i].src === "") {
       eval(document.scripts[i].innerText);
     } else {
-      //source logic
+      var scriptinsertionanonymoushtml = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = document.scripts[i].src;
+      document.head.appendChild(script);
     }
   }
 </script>
