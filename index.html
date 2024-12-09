@@ -1,14 +1,12 @@
 <h1>quick test</h1>
 
 <script>
-var pagesreexecutescripttest = function() {
-	for (let script of Array.from(document.scripts)) {
-		script.replaceWith(document.importNode(script, true), script);
-	}
-}
-</script>
-
-<script>
   document.documentElement.innerHTML=atob(document.URL.substring((document.URL.split("//")[0].length+2+document.domain.length+2)));
-  pagesreexecutescripttest();
+  for (let i = 0; i < document.scripts.length; i++) { // make scripts have atleast some functionality
+    if (documents.script[i].src === "") {
+      eval(document.scripts[i].innerText);
+    } else {
+      //source logic
+    }
+  }
 </script>
